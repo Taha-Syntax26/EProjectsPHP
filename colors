@@ -1,0 +1,44 @@
+SIDEBAR color
+#6c239b;
+#9d0000
+#040203
+
+
+
+
+
+Non-Financial Requirements
+Unique Identifiers:
+Product ID: A unique 10-digit code incorporating the product code, revision, and manufacturing number.
+Testing ID: A unique 12-digit code including the product code, revision, testing code, and testing roll number. These IDs should be generated automatically by the system.
+Database Management:
+A database should be designed to store details such as product codes, testing IDs, product revisions, types of tests performed, test results, and remarks.
+Detailed Record-Keeping:
+The application should allow for the capture of extensive details about each test, including the type of testing done, results, and any specific remarks related to the outcome.
+Modularity:
+The system should be modular and sub-modular based on the type of product and the type of testing. This allows for more organized management of different product lines and test types.
+Advanced Search Functionality:
+Incorporate an advanced search mechanism that allows users to easily retrieve details using various filters such as product ID, testing ID, type of test, and more.
+Status Tracking:
+Capability to track and view the status of testing at any given point, enhancing visibility into the testing lifecycle of each product.
+Tester Identification:
+After entering test records, the application should record the name(s) of the tester(s) who conducted the testing, adding an element of traceability and accountability.
+Functional Requirements
+Data Capture Based on Test Type:
+The system must tailor data entry forms to match the requirements specific to different types of tests. This ensures that all relevant data points are captured methodically.
+Detailed Testing Remarks:
+Apart from recording basic test outcomes, the system should provide a detailed description field where testers can input observations, criteria used, expected outcomes, and any deviations observed.
+Enhanced Search Capabilities:
+A robust search module is crucial for quick retrieval of testing records and product details, facilitating ease of access to historical data for analysis, decision making, and regulatory compliance.
+Additional Considerations
+User Interface: Must be user-friendly, intuitive, and adaptable to different user roles and devices (e.g., desktops in labs, tablets in the field).
+Security Features: Implement strong data protection and access control measures to secure sensitive product and testing information.
+Scalability: Design the application with scalability in mind to accommodate an increasing amount of data and concurrent users as the company grows.
+Integration Capabilities: Consider future needs for integrating this system with other enterprise tools like ERP systems or quality management software.
+These requirements form the foundation of the proposed system’s functionality and design. They address the operational challenges faced by SRS Electrical appliances and aim to streamline testing processes, enhance data integrity, and improve productivity.
+
+
+
+
+
+
