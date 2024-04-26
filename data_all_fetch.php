@@ -110,106 +110,155 @@ $fetch_data = $fetch_prepare->fetchAll(PDO::FETCH_ASSOC);
             <div class="row">
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="row">
-    <!-- Total Products Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <canvas id="totalProductsChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tested Products Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <canvas id="testedProductsChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pass Products Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-            <div class="card-body">
-                <canvas id="passProductsChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fail Products Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-            <div class="card-body">
-                <canvas id="failProductsChart"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-            <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Result </h6>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Total Products</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <?php echo "$total_products_count"; ?>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Product Name</th>
-                                    <th>Product Unique Id</th>
-                                    <th>Product Testing Id</th>
-                                    <th>Test Type</th>
-                                    <th>Date</th>
-                                    <th>Uploaded By</th>
-                                    <th>Result</th>
-                                    <th>Report</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Product Name</th>
-                                    <th>Product Unique Id</th>
-                                    <th>Product Testing Id</th>
-                                    <th>Test Type</th>
-                                    <th>Date</th>
-                                    <th>Uploaded By</th>
-                                    <th>Result</th>
-                                    <th>Report</th><
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <!-- Now you can loop through $data_fetch_array to generate your table -->
-                                <?php foreach ($fetch_data as $data) { ?>
-                                    <tr>
-                                        <td><?= $data['product_name'] ?></td>
-                                        <td><?= $data['product_unique_id'] ?></td>
-                                        <td><?= $data['product_testing_id'] ?></td>
-                                        <td><?= $data['testing_type'] ?></td>
-                                        <td><?= $data['prod_date'] ?></td>
-                                        <td><?= $data['uploader_name'] ?></td>
-                                        <td><?= $data['result'] ?></td>
-                                        <td>
-                                        <a href="reports.php?id=<?= $data['product_id'] ?>" class="btn btn-primary btn-sm d-sm-inline-block d-block">
-                                  <i class="fas fa-download"></i> Generate
-                                    </a>
 
-                
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Category's </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <?php echo "$category_count"; ?>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pass
+                                    </div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo "$total_pass_products"; ?></div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress progress-sm mr-2">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo "$pass_percentage%"; ?>" aria-valuenow="<?php echo "$pass_percentage"; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Requests Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Fail</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <?php echo "$total_fail_products"; ?>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- DataTales Example -->
+            <div class="container-fluid mt-4">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Result</h6>
         </div>
-        <!-- /.container-fluid -->
-
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Unique Id</th>
+                            <th>Product Testing Id</th>
+                            <th>Test Type</th>
+                            <th>Date</th>
+                            <th>Uploaded By</th>
+                            <th>Result</th>
+                            <th>Report</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Unique Id</th>
+                            <th>Product Testing Id</th>
+                            <th>Test Type</th>
+                            <th>Date</th>
+                            <th>Uploaded By</th>
+                            <th>Result</th>
+                            <th>Report</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <?php foreach ($fetch_data as $data) { ?>
+                            <tr>
+                                <td><?= htmlspecialchars($data['product_name']) ?></td>
+                                <td><?= htmlspecialchars($data['product_unique_id']) ?></td>
+                                <td><?= htmlspecialchars($data['product_testing_id']) ?></td>
+                                <td><?= htmlspecialchars($data['testing_type']) ?></td>
+                                <td><?= htmlspecialchars($data['prod_date']) ?></td>
+                                <td><?= htmlspecialchars($data['uploader_name']) ?></td>
+                                <td><?= htmlspecialchars($data['result']) ?></td>
+                                <td>
+                                    <a href="reports.php?id=<?= $data['product_id'] ?>" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-download"></i> Generate
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>
     <!-- End of Main Content -->
 
     <!-- Footer -->
@@ -337,116 +386,6 @@ $(document).ready(function() {
     // Initialize the event handlers when the page loads:
     initializeEventHandlers();
 });
-
-
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Chart for Total Products
-    new Chart(document.getElementById('totalProductsChart'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Total Products'],
-            datasets: [{
-                data: [<?php echo $total_products_count; ?>, 100 - <?php echo $total_products_count; ?>],
-                backgroundColor: ['#4e73df', '#f8f9fc'],
-                hoverBorderColor: "rgba(234, 236, 244, 1)"
-            }]
-        },
-        options: chartOptions('Total Products')
-    });
-
-    // Chart for Tested Products
-    new Chart(document.getElementById('testedProductsChart'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Tested Products'],
-            datasets: [{
-                data: [<?php echo $tested_products_count; ?>, 100 - <?php echo $tested_products_count; ?>],
-                backgroundColor: ['#1cc88a', '#f8f9fc'],
-                hoverBorderColor: "rgba(234, 236, 244, 1)"
-            }]
-        },
-        options: chartOptions('Tested Products')
-    });
-
-    // Chart for Pass Products
-    new Chart(document.getElementById('passProductsChart'), {
-        type: 'bar',
-        data: {
-            labels: ['Pass'],
-            datasets: [{
-                label: 'Pass',
-                data: [<?php echo $total_pass_products; ?>],
-                backgroundColor: ['#36b9cc']
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{ ticks: { beginAtZero: true } }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Pass Rate'
-            }
-        }
-    });
-
-    // Chart for Fail Products
-    new Chart(document.getElementById('failProductsChart'), {
-        type: 'bar',
-        data: {
-            labels: ['Fail'],
-            datasets: [{
-                label: 'Fail',
-                data: [<?php echo $total_fail_products; ?>],
-                backgroundColor: ['#f6c23e']
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{ ticks: { beginAtZero: true } }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Fail Rate'
-            }
-        }
-    });
-});
-
-function chartOptions(title) {
-    return {
-        maintainAspectRatio: false,
-        tooltips: {
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: '#dddfeb',
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10
-        },
-        cutoutPercentage: 80,
-        title: {
-            display: true,
-            text: title
-        }
-    };
-}
-
-
-
-
-
-
 
 
 </script>
