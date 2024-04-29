@@ -27,6 +27,7 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
         <a class="load-body load-head load-footer nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
+            
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -107,11 +108,11 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
     }
     ?>
     <!-- Nav Item - Charts -->
-    <!-- <li class="nav-item">
+     <li class="nav-item">
         <a class="load-body load-head load-footer nav-link" href="charts.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
-    </li> -->
+    </li> 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->
@@ -165,7 +166,7 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
                 </li>
 
                 <!-- Nav Item - Alerts -->
-                <!-- <li class="nav-item dropdown no-arrow mx-1">
+                 <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bell fa-fw"></i>
                         
@@ -211,10 +212,10 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
-                </li> -->
+                </li> 
 
-                <!-- Nav Item - Messages -->
-                <!-- <li class="nav-item dropdown no-arrow mx-1">
+             <!-- Nav Item - Messages -->
+                 <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope fa-fw"></i>
                        
@@ -271,9 +272,9 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                     </div>
-                </li> -->
+                </li>
 
-                <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
+                 <div class="topbar-divider d-none d-sm-block"></div> 
 
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow mx-5">
