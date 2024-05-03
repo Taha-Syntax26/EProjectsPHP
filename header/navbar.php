@@ -20,6 +20,19 @@ $category_data = $category_prepare->fetchAll(PDO::FETCH_ASSOC);
     <a class="load-body load-head load-footer sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <!-- <div class="sidebar-brand-text"> add logo</div> -->
     </a>
+    <div class="main">
+  
+  <!-- Another variation with a button -->
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search this blog">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</div>
+    
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
